@@ -1,0 +1,38 @@
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Hide default cursor on larger screens */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, input, textarea, select {
+    cursor: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cursor-outline, .cursor-dot {
+    display: none;
+  }
+}
