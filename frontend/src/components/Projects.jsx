@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import './Projects.css';
+import simonImage from '../assets/simon-game.png';
+import clickedImage from '../assets/clicks-by-srasti.png';
 
 const Projects = () => {
   const projectsData = [
@@ -9,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: 'Clicks-By-Srasti',
       description: 'A responsive photography sidebar project.',
-      image: 'https://images.unsplash.com/photo-1554046920-90dcac824b20?w=800&q=80',
+      image: clickedImage,
       tech: ['HTML', 'CSS'],
       liveLink: 'https://srasti527.github.io/Clicked-by-Srasti/',
       githubLink: 'https://github.com/Srasti527/Clicked-by-Srasti.git'
@@ -18,7 +20,7 @@ const Projects = () => {
       id: 2,
       title: 'Simon Game',
       description: 'An interactive web-based memory game inspired by the classic Simon electronic game. Test your memory with increasing levels of difficulty.',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
+      image: simonImage,
       tech: ['HTML', 'CSS', 'JavaScript'],
       liveLink: 'https://srasti527.github.io/Simon-game/',
       githubLink: 'https://github.com/Srasti527/Simon-game.git'
