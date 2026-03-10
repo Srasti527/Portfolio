@@ -20,7 +20,7 @@ const Projects = () => {
       description: 'An interactive web-based memory game inspired by the classic Simon electronic game. Test your memory with increasing levels of difficulty.',
       image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
       tech: ['HTML', 'CSS', 'JavaScript'],
-      liveLink: 'srasti527.github.io/Simon-game/',
+      liveLink: 'https://srasti527.github.io/Simon-game/',
       githubLink: 'https://github.com/Srasti527/Simon-game.git'
     },
     {
