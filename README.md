@@ -34,14 +34,13 @@ I am a Full Stack Web Developer focused on building scalable, efficient, and use
 * Optimized for performance and usability
 
 ---
-
 ## 📸 Screenshots
 
-```md id="q1m5zl"
-![Home Page](./screenshots/home.png)
-![Projects Section](./screenshots/projects.png)
-![Contact Section](./screenshots/contact.png)
-```
+![Home](https://raw.githubusercontent.com/Srasti527/Portfolio/main/screenshots/home.png)
+
+![Projects](https://raw.githubusercontent.com/Srasti527/Portfolio/main/screenshots/projects.png)
+
+![Contact](https://raw.githubusercontent.com/Srasti527/Portfolio/main/screenshots/contact.png)
 
 ---
 
