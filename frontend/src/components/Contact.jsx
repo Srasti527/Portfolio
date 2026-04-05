@@ -8,7 +8,7 @@ const Contact = () => {
     email: '',
     message: ''
   });
-  
+
   const [status, setStatus] = useState({
     submitting: false,
     info: { error: false, msg: null }
@@ -35,7 +35,7 @@ const Contact = () => {
         info: { error: true, msg: msg }
       });
     }
-    
+
     setTimeout(() => {
       setStatus(prev => ({ ...prev, info: { error: false, msg: null } }));
     }, 5000);
@@ -44,7 +44,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
-    
+
     try {
       const res = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
@@ -53,9 +53,9 @@ const Contact = () => {
         },
         body: JSON.stringify(formData)
       });
-      
+
       const data = await res.json();
-      
+
       if (res.ok) {
         handleServerResponse(true, 'Thank you! Your message has been sent successfully.');
       } else {
@@ -68,7 +68,7 @@ const Contact = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: { staggerChildren: 0.2, delayChildren: 0.2 }
     }
@@ -87,7 +87,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="heading-lg text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,8 +96,8 @@ const Contact = () => {
         >
           Get In <span className="text-gradient">Touch</span>
         </motion.h2>
-        
-        <motion.div 
+
+        <motion.div
           className="contact-content"
           initial="hidden"
           whileInView="visible"
@@ -107,16 +107,16 @@ const Contact = () => {
           <motion.div className="contact-info glass-panel" variants={itemVariants}>
             <h3 className="heading-md">Let's build something amazing together!</h3>
             <p className="text-secondary mb-4">
-              Whether you have a question, a project idea, or just want to say hi, 
+              Whether you have a question, a project idea, or just want to say hi,
               I'll try my best to get back to you!
             </p>
-            
+
             <div className="info-items">
               <div className="info-item">
                 <div className="info-icon">📧</div>
                 <div>
                   <h4 className="info-title">Email</h4>
-                  <a href="mailto:srasti965@gmail.com" className="info-desc">srasti965@gmail.com</a>
+                  <a href="mailto:srasti.jain11@gmail.com" className="info-desc">srasti.jain11@gmail.com</a>
                 </div>
               </div>
               <div className="info-item">
@@ -135,55 +135,55 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
-          
-          <motion.form 
-            className="contact-form glass-panel" 
+
+          <motion.form
+            className="contact-form glass-panel"
             onSubmit={handleSubmit}
             variants={formVariants}
           >
             <div className="form-group-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                  required 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="John Doe"
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  value={formData.email} 
-                  onChange={handleChange} 
-                  required 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="john@example.com"
                 />
               </div>
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="5" 
-                value={formData.message} 
-                onChange={handleChange} 
-                required 
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
-            
-            <motion.button 
-              type="submit" 
-              className="btn btn-primary submit-btn" 
+
+            <motion.button
+              type="submit"
+              className="btn btn-primary submit-btn"
               disabled={status.submitting}
               whileHover={{ scale: status.submitting ? 1 : 1.02 }}
               whileTap={{ scale: status.submitting ? 1 : 0.98 }}
@@ -192,7 +192,7 @@ const Contact = () => {
             </motion.button>
 
             {status.info.msg && (
-              <motion.div 
+              <motion.div
                 className={`form-status ${status.info.error ? 'error' : 'success'}`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
