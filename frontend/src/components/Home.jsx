@@ -166,7 +166,7 @@ const Home = () => {
             <motion.a href="https://x.com/TerminalThinker" target="_blank" rel="noreferrer" className="social-icon" whileHover={{ y: -5, color: "#1DA1F2" }}>
               <FaTwitter />
             </motion.a>
-            <motion.a href="mailto:srasti965@gmail.com" className="social-icon" whileHover={{ y: -5, color: "var(--accent-secondary)" }}>
+            <motion.a href="mailto:srasti.jain11@gmail.com" className="social-icon" whileHover={{ y: -5, color: "var(--accent-secondary)" }}>
               <FaEnvelope />
             </motion.a>
           </motion.div>
@@ -177,3 +177,4 @@ const Home = () => {
 };
 
 export default Home;
+
