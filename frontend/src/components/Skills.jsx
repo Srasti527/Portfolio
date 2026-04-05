@@ -6,13 +6,15 @@ const Skills = () => {
   const coreSkills = [
     { name: 'HTML & CSS', level: 90, color: '#E34F26' },
     { name: 'JavaScript', level: 85, color: '#F7DF1E' },
-    { name: 'React', level: 80, color: '#61DAFB' },
-    { name: 'Node.js & Express', level: 75, color: '#339933' },
+    { name: 'React.js', level: 80, color: '#61DAFB' },
+    { name: 'Node.js & Express.js', level: 75, color: '#339933' },
     { name: 'MongoDB', level: 75, color: '#47A248' }
   ];
 
   const additionalSkills = [
-    'Git', 'GitHub', 'Responsive Design', 'RESTful APIs'
+    'Java', 'Python', 'C', 'SQL', 'Tailwind CSS', 'REST APIs', 
+    'Git', 'GitHub', 'VS Code', 'Vercel', 'Data Structures & Algorithms', 
+    'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'
   ];
 
   const containerVariants = {
