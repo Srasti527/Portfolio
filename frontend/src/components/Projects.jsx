@@ -4,8 +4,9 @@ import Tilt from 'react-parallax-tilt';
 import './Projects.css';
 import simonImage from '../assets/simon-game.png';
 import clickedImage from '../assets/clicks-by-srasti.png';
+import easyKakshaImage from '../assets/classroom.jpg';
 
-const Projects = () => {
+function Projects() {
   const projectsData = [
     {
       id: 1,
@@ -33,7 +34,18 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'Express', 'MongoDB'],
       liveLink: '#',
       githubLink: '#'
+    },
+    // --- EASY-KAKSHA PROJECT
+    {
+      id: 4,
+      title: 'Easy-Kaksha',
+      description: 'A group project.',
+      image: easyKakshaImage,
+      tech: [],
+      liveLink: '#',
+      githubLink: 'https://github.com/Srasti527/Easy-'
     }
+    // -----------------------------------------------------------
   ];
 
   const containerVariants = {
@@ -113,6 +125,6 @@ const Projects = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Projects;
