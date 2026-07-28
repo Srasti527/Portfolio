@@ -26,3 +26,16 @@ yarn-debug.log*
 
 # Vercel
 .vercel
+
+# Repository migration
+Portfolio.git/
+portfolio.git.bfg-report/
+
+# Vite
+.vite/
+
+# Coverage
+coverage/
+
+# Windows
+Thumbs.db

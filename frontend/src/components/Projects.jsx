@@ -5,6 +5,8 @@ import './Projects.css';
 import simonImage from '../assets/simon-game.png';
 import clickedImage from '../assets/clicks-by-srasti.png';
 import easyKakshaImage from '../assets/classroom.jpg';
+import ytWatchPartyImage from "../assets/yt-watch-party.png";
+import serviceTrackImage from "../assets/service-track.png";
 
 function Projects() {
   const projectsData = [
@@ -44,8 +46,28 @@ function Projects() {
       tech: [],
       liveLink: '#',
       githubLink: 'https://github.com/Srasti527/Easy-'
-    }
+    },
     // -----------------------------------------------------------
+    {
+      id: 5,
+      title: 'YT Watch Party',
+      description: 'A real-time collaborative platform where multiple users can watch YouTube videos together in synchronized rooms. Supports synchronized playback, role-based permissions, and live room management.',
+
+      image: ytWatchPartyImage,
+
+      tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO'],
+      liveLink: 'https://yt-watch-party.vercel.app/',
+      githubLink: 'https://github.com/Srasti527/yt-watch-party'
+    },
+    {
+      id: 6,
+      title: 'ServiceTrack',
+      description: 'A full-stack MERN application for managing local service requests, provider workflows, authentication, reviews, and service status through responsive dashboards.',
+      image: serviceTrackImage,
+      tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT', 'REST APIs'],
+      liveLink: 'https://service-track-nzki.vercel.app/',
+      githubLink: 'https://github.com/Srasti527/ServiceTrack'
+    }
   ];
 
   const containerVariants = {
