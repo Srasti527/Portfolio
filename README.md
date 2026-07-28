@@ -40,7 +40,7 @@ I am a Full Stack Web Developer focused on building scalable, efficient, and use
 
 ![Projects](https://raw.githubusercontent.com/Srasti527/Portfolio/main/screenshots/projects.png)
 
-![Contact](https://raw.githubusercontent.com/Srasti527/Portfolio/main/screenshots/contact.png)
+
 
 ---
 
