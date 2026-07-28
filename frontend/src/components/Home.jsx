@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
-import { FaGithub, FaLinkedin, FaTwitter, FaMedium, FaEnvelope, FaReact, FaNodeJs } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaMedium, FaEnvelope, FaReact, FaNodeJs, FaDownload } from 'react-icons/fa';
 import { SiLeetcode, SiMongodb } from 'react-icons/si';
 import './Home.css';
 
@@ -168,6 +168,27 @@ const Home = () => {
             </motion.a>
             <motion.a href="mailto:srasti.jain11@gmail.com" className="social-icon" whileHover={{ y: -5, color: "var(--accent-secondary)" }}>
               <FaEnvelope />
+            </motion.a>
+            {/* TODO: Place the "Srasti_Jain_Resume.pdf" file inside the frontend/public/ directory */}
+            <motion.a 
+              href="/Srasti_Jain_Resume.pdf" 
+              target="_blank" 
+              rel="noreferrer" 
+              download="Srasti_Jain_Resume.pdf"
+              className="btn btn-outline"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{
+                padding: '0.5rem 1.2rem',
+                fontSize: '0.95rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                marginLeft: '0.5rem',
+                height: 'fit-content'
+              }}
+            >
+              Resume <FaDownload />
             </motion.a>
           </motion.div>
         </motion.div>
