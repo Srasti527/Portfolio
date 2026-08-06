@@ -124,6 +124,12 @@
     width: 100%;
   }
 
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
   .sphere-1, .sphere-2 {
     width: 300px;
     height: 300px;

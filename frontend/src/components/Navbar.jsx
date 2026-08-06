@@ -20,6 +20,7 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Resume', href: '/Srasti_Jain_Resume.pdf', isResume: true },
   ];
 
   return (
@@ -41,7 +42,7 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <ul className="navbar-menu">
-          {navLinks.map((link, index) => (
+          {navLinks.filter(link => !link.isResume).map((link, index) => (
             <motion.li 
               key={index}
               initial={{ opacity: 0, y: -20 }}
@@ -91,6 +92,8 @@ const Navbar = () => {
                     href={link.href} 
                     className="mobile-link"
                     onClick={() => setIsMobileMenuOpen(false)}
+                    target={link.isResume ? "_blank" : undefined}
+                    rel={link.isResume ? "noopener noreferrer" : undefined}
                   >
                     {link.name}
                   </a>
