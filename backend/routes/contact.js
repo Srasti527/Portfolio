@@ -1,17 +1,36 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit');
+
 const router = express.Router();
+
 const Contact = require('../models/Contact');
 
-// @route   POST api/contact
-// @desc    Submit a contact message
-// @access  Public
-router.post('/', async (req, res) => {
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  message: {
+    msg: 'Too many messages sent. Please try again later.'
+  }
+});
+
+router.post('/', contactLimiter, async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return res.status(400).json({ msg: 'Please enter all fields' });
+    }
+    
+    if (name.trim().length > 100) {
+      return res.status(400).json({ msg: 'Name is too long' });
+    }
+    if (email.trim().length > 150 || !email.trim().includes('@') || !email.trim().includes('.')) {
+      return res.status(400).json({ msg: 'Please enter a valid email' });
+    }
+    
+    if (message.trim().length > 2000) {
+      return res.status(400).json({ msg: 'Message is too long' });
     }
 
     const newContact = new Contact({
@@ -25,21 +44,9 @@ router.post('/', async (req, res) => {
 
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ msg: 'Server Error' });
   }
 });
 
-// @route   GET api/contact
-// @desc    Get all contact messages (Admin)
-// @access  Public (for dev, normally protected)
-router.get('/', async (req, res) => {
-    try {
-        const contacts = await Contact.find().sort({ date: -1 });
-        res.json(contacts);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
-});
 
 module.exports = router;
