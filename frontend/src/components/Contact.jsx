@@ -46,7 +46,7 @@ const Contact = () => {
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '');
       const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
